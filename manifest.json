@@ -1,0 +1,20 @@
+{
+  "name": "Gerador de Tabelas",
+  "description": "Build an Extension!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "Gerar Tabela"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://flightprices.vercel.app/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["activeTab", "scripting", "tabs", "storage"],
+  "host_permissions": ["https://flightprices.vercel.app/*"]
+}
